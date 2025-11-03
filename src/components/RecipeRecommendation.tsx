@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import { ChefHat, Clock, Users, TrendingUp } from 'lucide-react';
 import { useApp } from '../context/AppContext';
-import { Recipe } from '../types';
 
 const RecipeRecommendation: React.FC = () => {
   const { ingredients, recipes, startCooking } = useApp();

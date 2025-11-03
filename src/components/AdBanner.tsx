@@ -6,7 +6,7 @@ interface AdBannerProps {
   position?: 'top' | 'bottom' | 'sidebar';
 }
 
-const AdBanner: React.FC<AdBannerProps> = ({ type, position = 'top' }) => {
+const AdBanner: React.FC<AdBannerProps> = ({ type }) => {
   // Sample ad data - in production, this would come from an ad network
   const horizontalAds = [
     {
