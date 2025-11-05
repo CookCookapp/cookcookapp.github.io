@@ -1,6 +1,7 @@
 {
   "name": "cookcook",
   "version": "1.0.0",
+  "type": "module",
   "description": "A cooking recommendation webapp that helps you cook with what you have",
   "private": true,
   "scripts": {
