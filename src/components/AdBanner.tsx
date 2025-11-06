@@ -49,7 +49,7 @@ const AdBanner: React.FC<AdBannerProps> = ({ type }) => {
   if (type === 'horizontal') {
     const ad = horizontalAds[Math.floor(Math.random() * horizontalAds.length)];
     return (
-      <div className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg shadow-md p-6 mb-6">
+      <div className="bg-gradient-to-r from-blue-500 to-purple-500 card-premium p-6 mb-6">
         <div className="flex items-center justify-between text-white">
           <div className="flex items-center gap-4">
             <div className="text-5xl">{ad.image}</div>
@@ -61,7 +61,7 @@ const AdBanner: React.FC<AdBannerProps> = ({ type }) => {
           </div>
           <a
             href={ad.link}
-            className="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition flex items-center gap-2 whitespace-nowrap"
+            className="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-neutral-100 transition flex items-center gap-2 whitespace-nowrap"
           >
             <ShoppingCart size={18} />
             {ad.cta}
@@ -74,12 +74,12 @@ const AdBanner: React.FC<AdBannerProps> = ({ type }) => {
   // Vertical ad
   const ad = verticalAds[Math.floor(Math.random() * verticalAds.length)];
   return (
-    <div className="bg-white rounded-lg shadow-md p-4 border border-gray-200">
-      <p className="text-xs text-gray-500 uppercase tracking-wide mb-3">광고</p>
+    <div className="bg-white card-premium p-4 border border-neutral-200">
+      <p className="text-xs text-neutral-500 uppercase tracking-wide mb-3">광고</p>
       <div className="text-center">
         <div className="text-6xl mb-3">{ad.image}</div>
-        <h4 className="font-semibold text-gray-800 mb-1">{ad.title}</h4>
-        <p className="text-sm text-gray-600 mb-2">{ad.description}</p>
+        <h4 className="font-semibold text-neutral-800 mb-1">{ad.title}</h4>
+        <p className="text-sm text-neutral-600 mb-2">{ad.description}</p>
         <p className="text-lg font-bold text-primary-600 mb-3">{ad.price}</p>
         <a
           href={ad.link}

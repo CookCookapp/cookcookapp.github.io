@@ -56,14 +56,14 @@ const AIRecommendation: React.FC = () => {
       </div>
 
       {/* Search Form */}
-      <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+      <div className="bg-white card-premium p-6 mb-6">
         <form onSubmit={handleSearch} className="flex gap-3">
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="예: 싱가포르식 돼지고기 조리법을 알려줘"
-            className="flex-1 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="flex-1 border border-neutral-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
           <button
             type="submit"
@@ -86,13 +86,13 @@ const AIRecommendation: React.FC = () => {
 
         {/* Example Queries */}
         <div className="mt-4">
-          <p className="text-sm text-gray-600 mb-2">예시:</p>
+          <p className="text-sm text-neutral-600 mb-2">예시:</p>
           <div className="flex flex-wrap gap-2">
             {exampleQueries.map((example, idx) => (
               <button
                 key={idx}
                 onClick={() => setQuery(example)}
-                className="text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full text-gray-700 transition"
+                className="text-xs bg-neutral-100 hover:bg-neutral-200 px-3 py-1 rounded-full text-neutral-700 transition"
               >
                 {example}
               </button>
@@ -103,12 +103,12 @@ const AIRecommendation: React.FC = () => {
 
       {/* Results */}
       {result && (
-        <div className="bg-white rounded-lg shadow-md p-6">
+        <div className="bg-white card-premium p-6">
           <div className="flex items-start gap-3 mb-6">
             <Sparkles className="text-purple-500 flex-shrink-0 mt-1" size={24} />
             <div>
-              <h3 className="font-semibold text-gray-800 mb-2">AI 추천 결과</h3>
-              <p className="text-gray-600">{result.suggestions}</p>
+              <h3 className="font-semibold text-neutral-800 mb-2">AI 추천 결과</h3>
+              <p className="text-neutral-600">{result.suggestions}</p>
             </div>
           </div>
 
@@ -117,23 +117,23 @@ const AIRecommendation: React.FC = () => {
               {result.recipes.map((recipe: any) => (
                 <div
                   key={recipe.id}
-                  className="border border-gray-200 rounded-lg p-4 hover:border-purple-500 transition"
+                  className="border border-neutral-200 rounded-lg p-4 hover:border-purple-500 transition"
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
                         <ChefHat size={20} className="text-purple-500" />
-                        <h4 className="font-semibold text-gray-800">
+                        <h4 className="font-semibold text-neutral-800">
                           {recipe.nameKo}
                         </h4>
-                        <span className="text-xs bg-gray-100 px-2 py-1 rounded">
+                        <span className="text-xs bg-neutral-100 px-2 py-1 rounded">
                           {recipe.cuisine}
                         </span>
                       </div>
-                      <p className="text-sm text-gray-600 mb-3">
+                      <p className="text-sm text-neutral-600 mb-3">
                         {recipe.description}
                       </p>
-                      <div className="flex items-center gap-4 text-sm text-gray-600">
+                      <div className="flex items-center gap-4 text-sm text-neutral-600">
                         <span>{recipe.cookingTime}분</span>
                         <span>{recipe.servings}인분</span>
                         <span>
@@ -149,8 +149,8 @@ const AIRecommendation: React.FC = () => {
                       조리하기
                     </button>
                   </div>
-                  <div className="mt-3 pt-3 border-t border-gray-100">
-                    <p className="text-xs text-gray-600 mb-2">주요 재료:</p>
+                  <div className="mt-3 pt-3 border-t border-neutral-100">
+                    <p className="text-xs text-neutral-600 mb-2">주요 재료:</p>
                     <div className="flex flex-wrap gap-1">
                       {recipe.ingredients.slice(0, 6).map((ing: any, idx: number) => (
                         <span
@@ -172,8 +172,8 @@ const AIRecommendation: React.FC = () => {
       {/* Info Section */}
       {!result && (
         <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-6">
-          <h3 className="font-semibold text-gray-800 mb-3">AI 추천 기능 사용법</h3>
-          <ul className="space-y-2 text-gray-700">
+          <h3 className="font-semibold text-neutral-800 mb-3">AI 추천 기능 사용법</h3>
+          <ul className="space-y-2 text-neutral-700">
             <li className="flex items-start gap-2">
               <span className="text-purple-500 font-bold">1.</span>
               <span>원하는 요리명이나 재료를 자연스럽게 입력하세요</span>

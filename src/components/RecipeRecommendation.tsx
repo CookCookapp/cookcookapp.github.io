@@ -41,19 +41,19 @@ const RecipeRecommendation: React.FC = () => {
   return (
     <div className="max-w-6xl mx-auto p-6">
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">추천 요리</h2>
-        <p className="text-gray-600">
+        <h2 className="text-2xl font-bold text-neutral-800 mb-2">추천 요리</h2>
+        <p className="text-neutral-600">
           현재 보유 중인 재료 {ingredients.length}개를 기반으로 추천합니다
         </p>
       </div>
 
       {ingredients.length === 0 ? (
-        <div className="bg-white rounded-lg shadow-md p-12 text-center">
-          <ChefHat size={64} className="mx-auto mb-4 text-gray-400" />
-          <h3 className="text-xl font-semibold text-gray-700 mb-2">
+        <div className="bg-white card-premium p-12 text-center">
+          <ChefHat size={64} className="mx-auto mb-4 text-neutral-400" />
+          <h3 className="text-xl font-semibold text-neutral-700 mb-2">
             재료를 먼저 등록해주세요
           </h3>
-          <p className="text-gray-600">
+          <p className="text-neutral-600">
             대시보드에서 재료를 추가하면 맞춤 요리를 추천해드립니다.
           </p>
         </div>
@@ -62,7 +62,7 @@ const RecipeRecommendation: React.FC = () => {
           {recommendedRecipes.map((recipe) => (
             <div
               key={recipe.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition"
+              className="bg-white card-premium overflow-hidden hover:shadow-xl transition"
             >
               {/* Match Percentage Badge */}
               <div className="relative">
@@ -83,12 +83,12 @@ const RecipeRecommendation: React.FC = () => {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                <h3 className="text-xl font-bold text-neutral-800 mb-2">
                   {recipe.nameKo}
                 </h3>
-                <p className="text-sm text-gray-600 mb-4">{recipe.description}</p>
+                <p className="text-sm text-neutral-600 mb-4">{recipe.description}</p>
 
-                <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                <div className="flex items-center gap-4 text-sm text-neutral-600 mb-4">
                   <div className="flex items-center gap-1">
                     <Clock size={16} />
                     <span>{recipe.cookingTime}분</span>
@@ -100,20 +100,20 @@ const RecipeRecommendation: React.FC = () => {
                 </div>
 
                 <div className="mb-4">
-                  <p className="text-sm text-gray-600 mb-2">
+                  <p className="text-sm text-neutral-600 mb-2">
                     필요한 재료: {recipe.ingredients.length}개
                   </p>
                   <div className="flex flex-wrap gap-1">
                     {recipe.ingredients.slice(0, 4).map((ing, idx) => (
                       <span
                         key={idx}
-                        className="text-xs bg-gray-100 px-2 py-1 rounded"
+                        className="text-xs bg-neutral-100 px-2 py-1 rounded"
                       >
                         {ing.name}
                       </span>
                     ))}
                     {recipe.ingredients.length > 4 && (
-                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">
+                      <span className="text-xs bg-neutral-100 px-2 py-1 rounded">
                         +{recipe.ingredients.length - 4}
                       </span>
                     )}

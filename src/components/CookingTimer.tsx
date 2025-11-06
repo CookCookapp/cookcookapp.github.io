@@ -39,7 +39,7 @@ const CookingTimer: React.FC = () => {
   if (!cookingSession || !recipe) {
     return (
       <div className="max-w-4xl mx-auto p-6 text-center">
-        <p className="text-gray-600">조리 중인 레시피가 없습니다.</p>
+        <p className="text-neutral-600">조리 중인 레시피가 없습니다.</p>
       </div>
     );
   }
@@ -55,7 +55,7 @@ const CookingTimer: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="bg-white card-premium overflow-hidden">
         {/* Header */}
         <div className="bg-primary-500 text-white p-6">
           <div className="flex justify-between items-start mb-4">
@@ -86,7 +86,7 @@ const CookingTimer: React.FC = () => {
         </div>
 
         {/* Progress Bar */}
-        <div className="bg-gray-200 h-2">
+        <div className="bg-neutral-200 h-2">
           <div
             className="bg-green-500 h-full transition-all duration-300"
             style={{ width: `${progress}%` }}
@@ -96,7 +96,7 @@ const CookingTimer: React.FC = () => {
         {/* Current Step */}
         <div className="p-8">
           <div className="flex items-center justify-between mb-6">
-            <h3 className="text-lg font-semibold text-gray-700">
+            <h3 className="text-lg font-semibold text-neutral-700">
               단계 {cookingSession.currentStep + 1} / {recipe.steps.length}
             </h3>
             <div className="flex gap-2">
@@ -121,18 +121,18 @@ const CookingTimer: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-lg p-6 mb-6">
-            <p className="text-xl text-gray-800 leading-relaxed">
+          <div className="bg-neutral-50 rounded-lg p-6 mb-6">
+            <p className="text-xl text-neutral-800 leading-relaxed">
               {currentStepData.instruction}
             </p>
             {currentStepData.duration && (
-              <p className="text-sm text-gray-600 mt-4">
+              <p className="text-sm text-neutral-600 mt-4">
                 예상 소요 시간: {Math.floor(currentStepData.duration / 60)}분 {currentStepData.duration % 60}초
               </p>
             )}
             {currentStepData.ingredients && currentStepData.ingredients.length > 0 && (
               <div className="mt-4">
-                <p className="text-sm text-gray-600 mb-2">이 단계에 필요한 재료:</p>
+                <p className="text-sm text-neutral-600 mb-2">이 단계에 필요한 재료:</p>
                 <div className="flex flex-wrap gap-2">
                   {currentStepData.ingredients.map((ing, idx) => (
                     <span key={idx} className="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm">
@@ -155,7 +155,7 @@ const CookingTimer: React.FC = () => {
             <button
               onClick={previousStep}
               disabled={cookingSession.currentStep === 0}
-              className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg flex items-center gap-2 hover:bg-gray-300 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-6 py-3 bg-neutral-200 text-neutral-700 rounded-lg flex items-center gap-2 hover:bg-neutral-300 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <ChevronLeft size={20} />
               이전 단계
@@ -182,8 +182,8 @@ const CookingTimer: React.FC = () => {
         </div>
 
         {/* All Steps Overview */}
-        <div className="border-t border-gray-200 p-6 bg-gray-50">
-          <h4 className="font-semibold text-gray-700 mb-4">전체 조리 과정</h4>
+        <div className="border-t border-neutral-200 p-6 bg-neutral-50">
+          <h4 className="font-semibold text-neutral-700 mb-4">전체 조리 과정</h4>
           <div className="space-y-3">
             {recipe.steps.map((step, idx) => (
               <div
@@ -202,13 +202,13 @@ const CookingTimer: React.FC = () => {
                       ? 'bg-primary-500 text-white'
                       : idx < cookingSession.currentStep
                       ? 'bg-green-500 text-white'
-                      : 'bg-gray-200 text-gray-600'
+                      : 'bg-neutral-200 text-neutral-600'
                   }`}
                 >
                   {idx < cookingSession.currentStep ? <CheckCircle size={18} /> : idx + 1}
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm text-gray-700">{step.instruction}</p>
+                  <p className="text-sm text-neutral-700">{step.instruction}</p>
                 </div>
               </div>
             ))}
