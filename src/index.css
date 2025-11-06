@@ -7,7 +7,8 @@
 :root {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', sans-serif;
-  line-height: 1.6;
+  font-size: 16px; /* 모바일 기본 폰트 크기 증가 */
+  line-height: 1.7; /* 한글 가독성을 위한 행간 */
   font-weight: 400;
   color-scheme: light;
   color: #171717;
@@ -19,10 +20,30 @@
   -webkit-text-size-adjust: 100%;
 }
 
+/* 모바일 폰트 크기 최적화 */
+@media (max-width: 640px) {
+  :root {
+    font-size: 15px; /* 모바일에서 약간 작게 */
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  font-size: 0.875rem; /* 14px */
+}
+
+/* 본문 텍스트 크기 */
+p, span, div {
+  font-size: 0.875rem; /* 14px - 82cook 스타일 */
+}
+
+/* 모바일에서 본문 크기 */
+@media (max-width: 640px) {
+  p, span, div {
+    font-size: 0.9375rem; /* 15px - 모바일에서 더 크게 */
+  }
 }
 
 #root {
@@ -45,14 +66,50 @@ body {
   }
 
   .btn-primary {
-    @apply bg-primary-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-primary-700 transition-all duration-200 shadow-sm hover:shadow-md active:scale-95;
+    @apply bg-primary-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-primary-700 transition-all duration-200 shadow-sm hover:shadow-md active:scale-95 text-base;
   }
 
   .btn-secondary {
-    @apply bg-white text-neutral-700 px-6 py-3 rounded-xl font-medium hover:bg-neutral-50 transition-all duration-200 shadow-sm hover:shadow-md border border-neutral-200 active:scale-95;
+    @apply bg-white text-neutral-700 px-6 py-3 rounded-xl font-medium hover:bg-neutral-50 transition-all duration-200 shadow-sm hover:shadow-md border border-neutral-200 active:scale-95 text-base;
   }
 
   .input-premium {
-    @apply border border-neutral-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-white;
+    @apply border border-neutral-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-white text-base;
+  }
+}
+
+/* 제목 크기 조정 */
+h1 {
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.4;
+}
+
+h2 {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.4;
+}
+
+h3 {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5;
+}
+
+/* 모바일에서 제목 크기 */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 1.375rem; /* 22px */
+  }
+
+  h2 {
+    font-size: 1.125rem; /* 18px */
+  }
+
+  h3 {
+    font-size: 1rem; /* 16px */
   }
 }
