@@ -73,14 +73,7 @@ const AppContent: React.FC = () => {
       )}
 
       {/* Main Content */}
-      <main className="pb-8 sm:pb-12">
-        {/* Ad Banner - Top */}
-        {!cookingSession && (
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-            <AdBanner type="horizontal" position="top" />
-          </div>
-        )}
-
+      <main className="pb-8 sm:pb-12 pt-6">
         {/* Content Area */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cookingSession ? 'w-full' : 'flex flex-col lg:flex-row gap-6'}>
