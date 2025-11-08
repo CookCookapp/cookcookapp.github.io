@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - claude/cooking-recommendation-app-011CUkZNr4SoXeqw27CRbFZf
 
   workflow_dispatch:
 
