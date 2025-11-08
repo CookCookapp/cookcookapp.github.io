@@ -6,7 +6,6 @@ import RecipeRecommendation from './components/RecipeRecommendation';
 import RecipeSearch from './components/RecipeSearch';
 import AIRecommendation from './components/AIRecommendation';
 import CookingTimer from './components/CookingTimer';
-import AdBanner from './components/AdBanner';
 
 const AppContent: React.FC = () => {
   const { currentView, setCurrentView, cookingSession } = useApp();
@@ -76,9 +75,9 @@ const AppContent: React.FC = () => {
       <main className="pb-8 sm:pb-12 pt-6">
         {/* Content Area */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cookingSession ? 'w-full' : 'flex flex-col lg:flex-row gap-6'}>
+          <div className="w-full">
             {/* Main Content */}
-            <div className={cookingSession ? 'w-full' : 'flex-1'}>
+            <div className="w-full">
               {cookingSession ? (
                 <CookingTimer />
               ) : (
@@ -90,14 +89,6 @@ const AppContent: React.FC = () => {
                 </>
               )}
             </div>
-
-            {/* Sidebar - only show when not cooking */}
-            {!cookingSession && (
-              <aside className="hidden lg:block w-80 space-y-6 flex-shrink-0">
-                <AdBanner type="vertical" position="sidebar" />
-                <AdBanner type="vertical" position="sidebar" />
-              </aside>
-            )}
           </div>
         </div>
       </main>
